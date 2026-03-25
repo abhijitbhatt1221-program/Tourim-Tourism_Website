@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Details - Turism</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tourim</h1>
+        <p>Your Gateway to Exploration</p>
+    </header>
+    <nav>
+        <a href="index1.html">Home</a>
+        <a href="index1.html#tours">Tour</a>
+        <a href="index1.html#about">About</a>
+        <a href="index1.html#contact">Contact</a>
+    </nav>
+    <section id="tour-details">
+        <h2 id="tour-title">Tour Details</h2>
+        <div id="tour-content">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+        <button onclick="window.history.back()">Back to Tours</button>
+    </section>
+    <footer>
+        <p>&copy; 2023 Tourim. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Tour data (you can move this to a separate JSON file for larger sites)
+        script1.js
+const tours = {
+            european: {
+                title: "European Odyssey",
+                description: "Embark on a 10-day journey through the heart of Europe. Visit iconic landmarks, savor local cuisines, and immerse yourself in rich cultures.",
+                itinerary: [
+                    "Day 1-3: Paris - Eiffel Tower, Louvre Museum",
+                    "Day 4-6: Rome - Colosseum, Vatican City",
+                    "Day 7-9: Barcelona - Sagrada Familia, Gaudi Park",
+                    "Day 10: Departure"
+                ],
+                price: "$2,500",
+                image: "https://via.placeholder.com/800x400?text=European+Odyssey"
+            },
+            asian: {
+                title: "Asian Adventure",
+                description: "Discover the vibrant contrasts of Asia in 12 days. From bustling cities to serene beaches, this tour offers it all.",
+                itinerary: [
+                    "Day 1-4: Tokyo - Skyscrapers, temples, sushi",
+                    "Day 5-7: Bangkok - Markets, palaces, street food",
+                    "Day 8-11: Bali - Beaches, volcanoes, relaxation",
+                    "Day 12: Departure"
+                ],
+                price: "$3,000",
+                image: "https://via.placeholder.com/800x400?text=Asian+Adventure"
+            },
+            african: {
+                title: "African Safari",
+                description: "Experience the wild beauty of Africa on a 14-day safari. Witness majestic animals in their natural habitats.",
+                itinerary: [
+                    "Day 1-5: Kenya - Maasai Mara, wildlife viewing",
+                    "Day 6-10: Tanzania - Serengeti, Ngorongoro Crater",
+                    "Day 11-13: Relaxation and optional activities",
+                    "Day 14: Departure"
+                ],
+                price: "$4,000",
+                image: "https://via.placeholder.com/800x400?text=African+Safari"
+            }
+        };
+
+        // Get tour from URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const tourKey = urlParams.get('tour');
+        const tour = tours[tourKey];
+
+        if (tour) {
+            document.getElementById('tour-title').textContent = tour.title;
+            document.getElementById('tour-content').innerHTML = `
+                <img src="${tour.image}" alt="${tour.title}" style="width:100%; max-width:800px; margin-bottom:20px;">
+                <p><strong>Description:</strong> ${tour.description}</p>
+                <p><strong>Price:</strong> ${tour.price} (includes flights, accommodation, and guides)</p>
+                <h3>Itinerary</h3>
+                <ul>
+                    ${tour.itinerary.map(day => `<li>${day}</li>`).join('')}
+                </ul>
+                <button onclick="alert('Booking feature coming soon! Contact us at contact@turism.com')">Book Now</button>
+            `;
+        } else {
+            document.getElementById('tour-content').innerHTML = '<p>Sorry, tour not found. <a href="index1.html">Go back</a></p>';
+        }
+    </script>
+        
+</body>
+    </html>

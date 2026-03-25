@@ -1,0 +1,64 @@
+body { 
+    font-family: Arial,sans-serif; 
+     margin: 0; 
+     padding: 0; 
+     color: #333; }
+header { 
+    background: #007bff; 
+    color: white; padding: 20px; 
+    text-align: center; }
+nav { 
+    background: #f8f9fa; 
+    padding: 10px; 
+    text-align: center; }
+nav a { 
+    margin: 0 15px; 
+    text-decoration: none; 
+    color: #007bff; }
+section { 
+    padding: 40px; 
+    max-width: 1200px; 
+    margin: auto; }
+.hero { 
+    background: url('abc.jpg') no-repeat center/cover;
+    
+     height: 400px; display: flex; 
+     background-color: #333;
+     align-items: center; 
+     justify-content: center;
+      color: white; 
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.tours {
+     display: flex; 
+     flex-wrap: wrap; 
+     gap: 20px; }
+.tour { background: #f8f9fa;
+     padding: 20px; border-radius: 8px;
+      flex: 1 1 300px; }
+form { display: flex; 
+    flex-direction: column; 
+    max-width: 400px; }
+input, textarea {
+     margin-bottom: 10px;
+      padding: 10px; }
+button {
+     background: #007bff;
+      color: white;
+       border: none; 
+       padding: 10px; 
+       cursor: pointer; }
+footer { 
+    background: #333; 
+    color: white; 
+    text-align: center; 
+    padding: 20px; }
+
+
+
+    #tour-details img {
+         border-radius: 8px; }
+#tour-details ul { 
+    list-style-type: disc;
+     margin-left: 20px; }
+#tour-details button { 
+    margin-top: 20px; }
